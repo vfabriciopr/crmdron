@@ -8,6 +8,20 @@ import Signup from './routes/signup.tsx'
 import Dashboard from './routes/Dashboard.tsx'
 import ProtectedRoute from './routes/ProtectedRoute.tsx'
 import { AuthProvider } from './assets/AuthProvider.tsx'
+import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+
+const client = new ApolloClient({
+    uri: 'http://localhost:4000/graphql',
+    cache: new InMemoryCache(),
+})
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </>
+);
 
 const router = createBrowserRouter([
   {
