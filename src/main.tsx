@@ -13,6 +13,7 @@ import TopBuyersPage from './routes/TopBuyersPage.tsx';
 import CartPage from './routes/CartPage.tsx';
 import TopSellersPage from './routes/TopSellersPage.tsx';
 import SignUpPage from './routes/SignUpPage.tsx';
+import MainPage from './routes/MainPage.tsx';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -28,6 +29,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 
 const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainPage />,
+  },
   {
     path: '/login',
     element: <LoginPage />,
