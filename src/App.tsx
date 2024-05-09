@@ -11,7 +11,8 @@ function App() {
         <Route index element={<Login />} />
 
         <Route element={<ProtectedRoute />}>
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />{" "}
+          {/* Use the Dashboard component */}
         </Route>
         <Route path="signup" element={<Signup />}></Route>
       </Routes>

@@ -22,25 +22,28 @@ export default function Login() {
 
   return (
     /* Aqui se llama la funcion handleSubmit, borre el onSubmit={handleSubmit} */
-    <form className="form">
-      <DefaultLayout>
+    <DefaultLayout>
+      <form className="p-3" onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <label>Username</label>
-        <input
-          type="text"
-          value={Username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <div className="flex flex-col gap-1 w-fit">
+          <label>Username</label>
+          <input
+            type="text"
+            value={Username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="border p-1 text-sm rounded"
+          />
+        </div>
 
         <label>Password</label>
         <input
           type="password"
           value={Password}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
         <button>Submit</button>
-      </DefaultLayout>
-    </form>
+      </form>
+    </DefaultLayout>
   );
 }
